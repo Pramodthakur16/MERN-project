@@ -1,25 +1,28 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
-import axios from 'axios'
-import { useEffect } from 'react'
+// import axios from 'axios'
+// import { useEffect } from 'react'
+import UserForm from './components/userForm';
 
 function App() {
-  const [jokes, setJokes] = useState([])
+  // const [jokes, setJokes] = useState([])
 
-  useEffect(() => {
-    axios.get('/api/jokes')
-      .then((response) => {
-        setJokes(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  })
+  // useEffect(() => {
+  //   axios.get('/api/jokes')
+  //     .then((response) => {
+  //       setJokes(response.data)
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  // })
 
   return (
     <>
-      <h1>Fullstack web application</h1>
-      <p>Jokes: {jokes.length} </p>
+      <h2>User Form</h2>
+      <UserForm />
+
+      {/* <p>Jokes: {jokes.length} </p>
 
       {jokes.map((joke) => (
         <div key={joke.id}>
@@ -27,7 +30,7 @@ function App() {
           <h3>{joke.Content}</h3>
         </div>
       )
-    )}
+    )} */}
     </>
   )
 }

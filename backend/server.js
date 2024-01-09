@@ -1,5 +1,5 @@
-// const express = require('express') - traditional way
 import express from 'express';
+// const express = require('express') - traditional way
 
 const app = express();
 
