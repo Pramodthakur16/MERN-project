@@ -1,7 +1,12 @@
 import express from 'express';
 // const express = require('express') - traditional way
+import bodyParser from 'body-parser';
+import cors from 'cors';
 
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
 
 app.get('/api', (req, res) => {
     res.send('server is ready');
@@ -28,6 +33,16 @@ app.get('/api/jokes', (req, res) => {
         }
     ];
     res.send(jokes);
+})
+
+app.post('/usersFormData', (req, res) => {
+    const email = req.body;
+    console.log("user data recieved", email)
+
+    res.json({
+        status: 'success',
+        message: 'Data recieved successfully!'
+    })
 })
 
 const port = process.env.PORT || 8000;
